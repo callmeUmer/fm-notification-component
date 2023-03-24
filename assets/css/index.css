@@ -34,7 +34,7 @@ body {
 
 #notification {
     background-color: var(--white);
-    width: 40%;
+    max-width: 35%;
     padding: 10px;
     border-radius: 10px;
     padding: 10px 20px;
@@ -44,6 +44,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 10px;
 }
 
@@ -60,7 +61,7 @@ body {
     background-color: var(--primary-blue);
 }
 
-.heading-wrapper p {
+.heading-wrapper a {
     color: var(--grayish-blue-500);
     font-size: medium;
 }
@@ -82,9 +83,16 @@ body {
     vertical-align: middle;
 }
 
+#read {
+    margin: 0;
+}
+
+.message {
+    width: 90%;
+}
+
 .list .message {
     display: inherit;
-    align-items: center;
 }
 
 .message .time {
@@ -124,3 +132,47 @@ a:hover {
     color: var(--primary-blue)
 }
 
+.dm {
+    display: block;
+    margin-left: 65px;
+    border-width: 1px;
+    padding: 20px 10px;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: var(--grayish-blue-500);
+    color: var(--grayish-blue-500);
+    margin-top: 0;
+}
+
+.dm:hover {
+    background-color: var(--grayish-blue-200);
+    cursor: pointer;
+}
+
+.picture {
+    display: inherit;
+    align-items: center;
+    width: 90%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+@media (max-width: 1000px) {
+    #notification {
+        background-color: var(--white);
+        max-width: 60%;
+        padding: 10px;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 660px) {
+    #notification {
+        background-color: var(--white);
+        max-width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+        padding: 10px 20px;
+    }
+}

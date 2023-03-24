@@ -15,7 +15,7 @@
 
   <div class="heading-wrapper">
     <h1 class="heading">Notifications <span>3</span></h1>
-    <p>Mark all as read</p>
+    <a onclick="clear_unread()">Mark all as read</a>
   </div>
   
   <div class="list unread">
@@ -29,17 +29,17 @@
   </div>
 
   <div class="list unread">
-    <img src="./assets/images/avatar-angela-gray.webp" alt="Mark Webber profile picture" />
+    <img src="./assets/images/avatar-angela-gray.webp" alt="Angela Gray profile picture" />
     <div class="message">
       <p>
-        <a class="profile">Angela Gray</a> followed you <span class="dot"></span> <br/>
+        <a class="profile">Angela Gray</a> followed you<span class="dot"></span> <br/>
         <span class="time">5m ago</span>
       </p>
     </div>
   </div>
   
   <div class="list unread">
-    <img src="./assets/images/avatar-jacob-thompson.webp" alt="Mark Webber profile picture" />
+    <img src="./assets/images/avatar-jacob-thompson.webp" alt="Jacob Thompson profile picture" />
     <div class="message">
       <p>
         <a class="profile">Jacob Thompson</a> has joined your group <a>Chess Club</a><span class="dot"></span> <br/>
@@ -48,22 +48,66 @@
     </div>
   </div>
   
+  <div class="list">
+    <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="Rizky hasanuddin profile picture" />
+    <div class="message">
+      <p>
+        <a class="profile">Rizky Hasanuddin </a>sent you a private message<br/>
+        <span class="time">5 days ago</span>
+      </div>
+    </p>
+  </div>
+  <p class="dm">
+    Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+I'm already having lots of fun and improving my game.
+  </p>
 
-  Rizky Hasanuddin sent you a private message
-  5 days ago
-  Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
-  I'm already having lots of fun and improving my game.
+  <div class="list">
+    <img src="./assets/images/avatar-kimberly-smith.webp" alt="Kimberly Smith profile picture" />
+    <div class="picture">
+      <p>
+        <a class="profile">Kimberly Smith </a>commented on your picture<br/>
+        <span class="time">1 week ago</span>
+      </p>
+      <img src="./assets/images/image-chess.webp" alt="chess image"/>
+    </div>
+  </div>
 
-  Kimberly Smith commented on your picture
-  1 week ago
 
-  Nathan Peterson reacted to your recent post 5 end-game strategies to increase your win rate
-  2 weeks ago
-
-  Anna Kim left the group Chess Club
-  2 weeks ago
+  <div class="list">
+    <img src="./assets/images/avatar-nathan-peterson.webp" alt="Nathan Peterson profile picture" />
+    <div class="message">
+      <p>
+        <a class="profile">Nathan Peterson </a> reacted to your recent post <a class="post">5 end-game strategies to increase your win rate</a><br/>
+        <span class="time">2 weeks ago</span>
+      </p>
+    </div>
+  </div>
   
+  <div class="list">
+    <img src="./assets/images/avatar-anna-kim.webp" alt="Anna Kim profile picture" />
+    <div class="message">
+      <p>
+        <a class="profile">Anna Kim </a>left the group <a>Chess Club</a><br/>
+        <span class="time">2 weeks ago</span>
+      </p>
+    </div>
+  </div>
+
 </main>
 
+<script>
+  function clear_unread() {
+    console.log('clear')
+    // identifiers
+    const unread = document.querySelectorAll('.list')
+    const span = document.querySelectorAll(".dot");
+    const count = document.querySelector('.heading span');
+
+    span.forEach(e => e.remove())
+    unread.forEach(e => e.classList.remove('unread'))
+    count.innerHTML = 0
+  }
+</script>
 </body>
 </html>
